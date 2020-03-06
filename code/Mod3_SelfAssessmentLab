@@ -50,74 +50,20 @@ namespace Mod1_SelfAssessmentLab
             string courseTeacher = "";
 
 
-            // assign values to variables
-
-            // assign student information
-            studentFirstName = "John";
-            studentLastName = "Bong";
-            studentBirthDate = new DateTime(1999, 2, 13);
-            studentAddressLine1 = "133 NoStreet";
-            studentCity = "Hometown";
-            studentState_Province = "1st Province";
-            studentZip_Postal = "11336";
-            studentCountry = "Russia";
-
-            // assign UProgram information
-            programName = "Computer Engineering";
-            programDepartmentHead = "Egghead Balo";
-            programDegrees = "Comp Sc., Physics, Fine Arts";
-
-            // assign degree information
-            courseName = "Intro to C#";
-            courseCredits = 25;
-            courseWeekDuration = 6;
-            courseTeacher = "Mammy Hammy";
-
-
-            // output to console window
-
-            //// use placeholder style for student information
-            //Console.WriteLine("Student's name is {0} {1}, date of birth {2}.", studentFirstName, studentLastName, studentBirthDate);
-            //Console.WriteLine("Address is {0}, {1}, {2}, {3}, {4}.", studentAddressLine1, studentCity, studentZip_Postal, studentState_Province, studentCountry);
-
-            //// use string concatenation for UProgram information
-            //Console.WriteLine(programName + ", " + programDegrees + ", " + programDepartmentHead);
-
-            ////use string interpolation for degree information
-            //Console.WriteLine($"Course name: {courseName} -- Number of weeks to complete: {courseWeekDuration} -- Number of credits: {courseCredits}");
-
-
-            // prompt user for input for new student information
-            //Console.WriteLine("\nEnter your first name: ");
-            //studentFirstName = Console.ReadLine();
-            //Console.WriteLine("\nEnter your last name: ");
-            //studentLastName = Console.ReadLine();
-            //Console.WriteLine("\nEnter your address: ");
-            //studentAddressLine1 = Console.ReadLine();
-            //studentCity = Console.ReadLine();
-            //studentZip_Postal = Console.ReadLine();
-
-
-            //// print user's name
-            //Console.WriteLine($"Are you {studentFirstName} {studentLastName} who lives at {studentAddressLine1}, {studentCity}, {studentState_Province}?");
+            ////////////////////////////////////////////////////////////////////////////////////////
 
             GetStudentInformation();
+
+            PrintStudentDetails(studentFirstName, studentLastName);
 
             try
             {
                 ValidateStudentBirthDate();
-            } 
+            }
             catch (NotImplementedException NotImp)
             {
                 Console.WriteLine(NotImp.Message);
             }
-            
-
-            PrintStudentDetails();
-
-
-            
-
         }
 
         static void GetStudentInformation()
@@ -130,10 +76,9 @@ namespace Mod1_SelfAssessmentLab
             string studentBirthDate = Console.ReadLine();
         }
 
-
-        static void PrintStudentDetails(string studentFirstName, string studentLastName, DateTime studentBirthDate)
+        static void PrintStudentDetails(string studentFirstName, string studentLastName)
         {
-            Console.WriteLine("{0} {1} was born on: {2}", studentFirstName, studentLastName, studentBirthDate);
+            Console.WriteLine("{0} {1} was born on: {0}", studentFirstName, studentLastName);
         }
 
         static void ValidateStudentBirthDate()
